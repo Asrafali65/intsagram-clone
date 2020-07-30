@@ -1,0 +1,47 @@
+// basic reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// story container height and width
+$story-height: 118px;
+$width: 614px;
+
+// card height
+$height: 914px;
+
+// main container
+$main-width: 935px;
+
+
+// color
+$white: #FFFFFF;
+$gray: #fafafa;
+$light-gray: #DBDBDB;
+$black: #262626;
+
+$insta-gradient: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+
+$roboto: 'Mulish', sans-serif;
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+@mixin  flex-box($align , $justify, $direction) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+body {
+    background: $gray;
+    font-family: $roboto;
+}

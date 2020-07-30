@@ -1,0 +1,520 @@
+@import "./config.scss";
+
+header {
+  position: fixed;
+  height: 54px;
+  width: 100%;
+  @include flex-box(center, space-between, row);
+  background: $white;
+  border-bottom: 1px solid $light-gray;
+  padding: 0 150px;
+  z-index: 1;
+
+  // logo
+
+  .logo {
+    img {
+      width: 150px;
+    }
+  }
+
+  // search box
+  .search-box {
+    position: relative;
+    width: 200px;
+    height: 30px;
+    border: 1px solid $light-gray;
+    border-radius: 5px;
+    background: $gray;
+
+    .input-div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      p {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.3);
+        span {
+          i {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  nav {
+    width: 20%;
+    @include flex-box(center, space-between, row);
+
+    ul {
+      width: 75%;
+      @include flex-box(center, space-between, row);
+
+      li {
+        a {
+          color: $black;
+          i {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+
+    // profile
+    .profile {
+      background: yellow;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+// -------------------------------------------------------------------
+
+main {
+  width: 70%;
+  margin: 0 auto;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 70% 1fr;
+  justify-items: center;
+
+  .main-container {
+    width: 650px;
+    // story board
+    .story-board {
+      width: $width;
+      height: $story-height;
+      @include flex-box(center, flex-start, row);
+      background: $white;
+      overflow: hidden;
+      border: 1px solid $light-gray;
+      border-radius: 5px;
+      margin: 100px 0 40px 0;
+
+      .story {
+        height: 90px;
+        width: 100px;
+        margin: 0 10px;
+        @include flex-box(center, space-between, column);
+      }
+
+      .image-wrapper {
+        height: 62px;
+        width: 62px;
+        background: $insta-gradient;
+        position: relative;
+        border-radius: 50%;
+
+        img {
+          width: 56px;
+          height: 56px;
+          object-fit: cover;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+          border: 2px solid $white;
+        }
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+
+    // ---------------------------------------------
+
+    .card-wrapper {
+      width: $width;
+      border: 1px solid $light-gray;
+      border-radius: 5px;
+      margin: 20px 0;
+      background: $white;
+
+      .profile-container {
+        margin: 10px 0;
+        position: relative;
+        width: 100%;
+        @include flex-box(center, flex-start, row);
+
+        .profile-card-image {
+          width: 4;
+          height: 42px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin: 0 15px;
+
+          img {
+            width: 42px;
+            height: 42px;
+            object-fit: cover;
+          }
+        }
+
+        .profile-card-name {
+          a {
+            font-size: 14px;
+            font-weight: 600;
+            color: $black;
+          }
+        }
+
+        .profile-more {
+          position: absolute;
+          right: 15px;
+
+          i {
+            color: #363636;
+            font-size: 16px;
+          }
+        }
+      }
+
+      // ------------------------
+
+      .profile-card-2nd-child-image {
+        width: 100%;
+
+        img {
+          width: $width;
+          height: $width;
+          object-fit: cover;
+        }
+      }
+
+      // -----------------------------------------------
+
+      .description-parent-container {
+        margin-left: 10px;
+        .like-container {
+          width: 100%;
+          display: flex;
+          position: relative;
+
+          i {
+            font-size: 25px;
+            color: $black;
+          }
+
+          .heart {
+            position: relative;
+            width: 25px;
+            height: 25px;
+            margin: 10px 10px 10px 0;
+
+            i {
+              position: absolute;
+              top: 0;
+              left: 0;
+              font-size: 25px;
+            }
+
+            .fas {
+              color: red;
+            }
+          }
+
+          .fa-comment,
+          .fa-location-arrow,
+          .bookmark {
+            margin: 10px 10px 10px 0;
+          }
+
+          .bookmark {
+            position: absolute;
+            right: 5px;
+            width: 25px;
+            height: 25px;
+
+            i {
+              position: absolute;
+              top: 0;
+              left: 0;
+              font-size: 25px;
+            }
+
+            .fas {
+              color: red;
+            }
+          }
+        }
+
+        // ----------------------
+        .liked-likes {
+          width: 100%;
+          @include flex-box(center, flex-start, row);
+
+          .like-image {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 10px 10px 10px 0;
+
+            img {
+              width: 28px;
+              height: 28px;
+              object-fit: cover;
+            }
+          }
+
+          // ---------------------
+
+          .like-content-wrapper {
+            display: flex;
+
+            p,
+            a {
+              margin-right: 10px;
+              font-size: 14px;
+            }
+
+            a {
+              color: $black;
+              font-weight: 600;
+            }
+          }
+        }
+
+        // -----------------------
+        .description {
+          display: flex;
+          a {
+            color: $black;
+            font-weight: 600;
+            font-size: 14px;
+          }
+          .para-desc {
+            margin-left: 10px;
+
+            p {
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              width: 200px;
+              overflow: hidden;
+              font-size: 14px;
+
+              &.read-more {
+                text-overflow: clip;
+                white-space: normal;
+              }
+            }
+          }
+          .more {
+            color: #a2a2a2;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 14px;
+          }
+        }
+
+        // -------------------------
+        .post-time {
+          margin-top: 10px;
+          p {
+            font-size: 10px;
+            color: #a2a2a2;
+          }
+        }
+
+        // --------------------------------
+
+        .comment-section {
+          margin: 10px 0 0 -10px;
+          width: $width;
+          border-top: 1px solid $light-gray;
+          height: 50px;
+
+          form {
+            position: relative;
+            height: 100%;
+
+            #comment {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 90%;
+              height: 40px;
+              border: none;
+              outline: none;
+              overflow-y: scroll;
+              resize: none;
+              padding: 10px 10px;
+              font-size: 14px;
+
+              /* width */
+              &::-webkit-scrollbar {
+                width: 1px;
+              }
+
+              /* Handle */
+              &::-webkit-scrollbar-thumb {
+                background: $light-gray;
+                border-radius: 10px;
+              }
+            }
+            .btn-post {
+              position: absolute;
+              right: 0;
+              top: 50%;
+              transform: translateY(-50%);
+              background: none;
+              border: none;
+              outline: none;
+              box-shadow: none;
+              padding: 10px 15px;
+              color: #1da1f6;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // ---------------
+
+  .side-container {
+    position: fixed;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-34%);
+    width: 325px;
+    height: 100%;
+
+    .profile-wrapper {
+      width: 150px;
+      @include flex-box(center, space-between, row);
+
+      .profile-img {
+        height: 52px;
+        width: 52px;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+          width: 52px;
+          height: 52px;
+          object-fit: cover;
+        }
+      }
+
+      .profile-name {
+        a {
+          color: $black;
+          font-size: 14px;
+          font-weight: 600;
+        }
+        p {
+          margin-top: 5px;
+          color: #a2a2a2;
+          font-size: 12px;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .suggestion-container {
+      margin: 20px 0 30px 0;
+      .suggestions {
+        @include flex-box(stretch, space-between, row);
+
+        p {
+          font-size: 14px;
+          color: #a2a2a2;
+          font-weight: 600;
+        }
+
+        a {
+          color: $black;
+          font-size: 12px;
+          font-weight: 400;
+        }
+      }
+
+      .profile-wrapper-suggestions {
+        margin: 15px 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        .profile-img {
+          height: 52px;
+          width: 52px;
+          border-radius: 50%;
+          overflow: hidden;
+          img {
+            width: 52px;
+            height: 52px;
+            object-fit: cover;
+          }
+        }
+
+        .profile-name {
+          margin-left: 20px;
+
+          p {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #a2a2a2;
+            font-weight: 400;
+          }
+          a {
+            color: $black;
+            font-size: 14px;
+            font-weight: 600;
+          }
+        }
+
+        .profile-follow {
+          position: absolute;
+          right: 10px;
+          button {
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            color: #1da1f6;
+          }
+        }
+      }
+    }
+
+    // ------------------------------------------------
+    .about-section {
+      ul {
+        display: flex;
+
+        li {
+          margin-right: 10px;
+          a {
+            font-size: 11px;
+            color: #a2a2a2;
+            font-weight: 400;
+          }
+        }
+      }
+
+      p {
+        color: #a2a2a2;
+        font-size: 11px;
+        margin-top: 15px;
+        font-weight: 400;
+      }
+    }
+  }
+}
